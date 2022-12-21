@@ -13,18 +13,52 @@ a {
 ul {
   list-style: none;
 }
-img{
+img {
   width: 100%;
   object-fit: cover;
 }
 
-.user-card{
+.user-card {
   max-width: 400px;
   width: 100%;
   min-width: 200px;
   margin: auto;
   text-align: center;
 }
-.user-card__avatar>img{
+.user-card__avatar > img {
   clip-path: polygon(76% 0, 100% 70%, 50% 100%, 0% 70%, 24% 0);
+}
+h2 {
+  position: relative;
+  overflow: hidden;
+}
+h2::before,
+h2::after {
+  content: "";
+  width: 100%;
+  background: black;
+  height: 4px;
+  display: block;
+  position: absolute;
+  top: 8%;
+  opacity: 0;
+}
+h2::before {
+  left: 101%;
+  transition: opacity 1.5s 0.3s, left 1.5s 0.3s;
+}
+h2::after {
+  right: 101%;
+  top: 90%;
+  transition: opacity 1.5s 0.3s, right 1.5s 0.3s;
+}
+article:hover > h2:before,
+article:hover > h2:after {
+  opacity: 1;
+}
+article:hover > h2:before {
+  left: 0%;
+}
+article:hover > h2:after {
+  right: 0%;
 }
